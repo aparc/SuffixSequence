@@ -11,6 +11,12 @@ struct SuffixSequence: Sequence {
     
     let letter: String
     
+    func suffixArray() -> [Int] {
+        self.enumerated()
+            .sorted { $0.element < $1.element }
+            .map { $0.offset }
+    }
+    
     func makeIterator() -> SuffixIterator {
         SuffixIterator(self)
     }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct SuffixSequence: Sequence {
     
@@ -50,11 +51,40 @@ struct SuffixIterator: IteratorProtocol {
 
 let sequence = SuffixSequence(letter: "word")
 
+final class SuffixViewModel: ObservableObject {
+    
+    @Published var text: String = .init()
+    
+    private var subscriptions: Set<AnyCancellable> = .init()
+    
+    init() {
+        $text
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
+            .map { t -> [SuffixSequence] in
+                t
+                    .trimmingCharacters(in: .punctuationCharacters)
+                    .split(separator: " ")
+                    .map { SuffixSequence(letter: String($0)) 	}
+            }
+            .sink { [weak self] t in
+                print(t)
+            }
+            .store(in: &subscriptions)
+    }
+    
+}
 
 struct ContentView: View {
+    
+    @ObservedObject var viewModel: SuffixViewModel = .init()
+    
+    @State var tabSelection: Int = 0
+    
     var body: some View {
-        Text("Hello, world!")
+        TextEditor(text: $viewModel.text)
+            .border(.gray, width: 2.0)
             .padding()
+            .frame(height: 500)
     }
 }
 

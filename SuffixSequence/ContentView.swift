@@ -8,9 +8,19 @@
 import SwiftUI
 import Combine
 
+enum SuffixResult: String, CaseIterable, Identifiable {
+	
+	var id: Self {
+		self
+	}
+	
+	case all = "All Suffixes"
+	case top10 = "Top 10"
+}
+
 struct SuffixSequence: Sequence {
     
-    let letter: String
+    let word: String
     
     func suffixArray() -> [Int] {
         self.enumerated()
@@ -31,11 +41,11 @@ struct SuffixIterator: IteratorProtocol {
     
     init(_ sequence: SuffixSequence) {
         suffixSequence = sequence
-        startIndex = sequence.letter.startIndex
+        startIndex = sequence.word.startIndex
     }
     
     mutating func next() -> String? {
-        let letter = suffixSequence.letter
+        let letter = suffixSequence.word
         guard !letter.isEmpty else { return nil }
         
         let suffix = letter.suffix(from: startIndex)
@@ -49,11 +59,12 @@ struct SuffixIterator: IteratorProtocol {
     
 }
 
-let sequence = SuffixSequence(letter: "word")
+let sequence = SuffixSequence(word: "word")
 
 final class SuffixViewModel: ObservableObject {
     
     @Published var text: String = .init()
+	@Published var suffixes: [String:Int] = .init()
     
     private var subscriptions: Set<AnyCancellable> = .init()
     
@@ -61,13 +72,18 @@ final class SuffixViewModel: ObservableObject {
         $text
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
             .map { t -> [SuffixSequence] in
-                t
-                    .trimmingCharacters(in: .punctuationCharacters)
-                    .split(separator: " ")
-                    .map { SuffixSequence(letter: String($0)) 	}
+				t
+					.split(separator: " ")
+                    .map { SuffixSequence(word: String($0)) }
             }
-            .sink { [weak self] t in
-                print(t)
+            .sink { [weak self] suffixSequences in
+				let t = suffixSequences
+					.flatMap { $0 }
+					.filter{ $0.count > 2 }
+					.reduce(into: [:]) { counts, suffix in
+						counts[suffix, default: 0] += 1
+					}
+				self?.suffixes = t
             }
             .store(in: &subscriptions)
     }
@@ -79,12 +95,42 @@ struct ContentView: View {
     @ObservedObject var viewModel: SuffixViewModel = .init()
     
     @State var tabSelection: Int = 0
+	@State var result: SuffixResult = .all
     
     var body: some View {
-        TextEditor(text: $viewModel.text)
-            .border(.gray, width: 2.0)
-            .padding()
-            .frame(height: 500)
+		TabView(selection: $tabSelection) {
+			TextEditor(text: $viewModel.text)
+				.border(.gray, width: 2.0)
+				.padding()
+				.frame(height: 500)
+				.tabItem {
+					Image(systemName: "text.magnifyingglass")
+					Text("Input")
+				}
+			
+			VStack(alignment: .leading) {
+				Text("Results")
+					.font(.largeTitle)
+					.bold()
+				Picker("Ass", selection: $result) {
+					ForEach(SuffixResult.allCases) { result in
+						Text(result.rawValue)
+					}
+				}
+				.pickerStyle(.segmented)
+				
+				ScrollView(.vertical, showsIndicators: false) {
+					
+				}
+			}
+			.padding()
+			.tabItem {
+				Image(systemName: "list.dash")
+				Text("Results")
+			}
+		}
+		
+        
     }
 }
 

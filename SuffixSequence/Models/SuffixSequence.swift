@@ -10,7 +10,7 @@ struct SuffixSequence: Sequence {
     let word: String
     
     func makeIterator() -> SuffixIterator {
-        SuffixIterator(self)
+        SuffixIterator(suffixSequence: self)
     }
     
 }
@@ -18,24 +18,12 @@ struct SuffixSequence: Sequence {
 struct SuffixIterator: IteratorProtocol {
     
     let suffixSequence: SuffixSequence
-    var startIndex: String.Index
-    
-    init(_ sequence: SuffixSequence) {
-        suffixSequence = sequence
-        startIndex = sequence.word.startIndex
-    }
+    var startIndex: Int = 0
     
     mutating func next() -> String? {
-        let string = suffixSequence.word
-        guard !string.isEmpty else { return nil }
-        
-        let suffix = string.suffix(from: startIndex)
-        if !suffix.isEmpty {
-            startIndex = string.index(after: startIndex)
-            return String(suffix)
-        } else {
-            return nil
-        }
+        guard startIndex < suffixSequence.word.count else { return nil }
+        startIndex += 1
+        return String(suffixSequence.word.suffix(startIndex))
     }
     
 }

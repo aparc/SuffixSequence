@@ -8,19 +8,80 @@
 
 /* Begin PBXBuildFile section */
 		490C67A6289EE3520068D1CE /* SuffixSequenceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C67A5289EE3520068D1CE /* SuffixSequenceApp.swift */; };
-		490C67A8289EE3520068D1CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C67A7289EE3520068D1CE /* ContentView.swift */; };
+		490C67A8289EE3520068D1CE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C67A7289EE3520068D1CE /* RootView.swift */; };
 		490C67AA289EE3590068D1CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490C67A9289EE3590068D1CE /* Assets.xcassets */; };
 		490C67AD289EE3590068D1CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490C67AC289EE3590068D1CE /* Preview Assets.xcassets */; };
-		49748A8E28A4ED5500482DFC /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49748A8D28A4ED5500482DFC /* TextScreen.swift */; };
+		496415BC28AD712D0033F320 /* TabRouterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496415BB28AD712D0033F320 /* TabRouterViewModel.swift */; };
+		496415BF28AD95E60033F320 /* SuffixOccurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496415BE28AD95E60033F320 /* SuffixOccurrence.swift */; };
+		496415C028AD95E60033F320 /* SuffixOccurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496415BE28AD95E60033F320 /* SuffixOccurrence.swift */; };
+		496415C628AD96800033F320 /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496415C528AD96800033F320 /* Sort.swift */; };
+		496415C728AD96800033F320 /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496415C528AD96800033F320 /* Sort.swift */; };
+		496415C928AD98170033F320 /* SuffixSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496415C828AD98170033F320 /* SuffixSequence.swift */; };
+		496B211728AC3D6B006AA2E8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496B20E828AAE8DE006AA2E8 /* WidgetKit.framework */; };
+		496B211828AC3D6B006AA2E8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496B20EA28AAE8DE006AA2E8 /* SwiftUI.framework */; };
+		496B211B28AC3D6B006AA2E8 /* SuffixWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B211A28AC3D6B006AA2E8 /* SuffixWidget.swift */; };
+		496B211D28AC3D6D006AA2E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496B211C28AC3D6D006AA2E8 /* Assets.xcassets */; };
+		496B212128AC3D6D006AA2E8 /* SuffixWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 496B211628AC3D6B006AA2E8 /* SuffixWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		496B212628AC5F76006AA2E8 /* SuffixStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B212528AC5F76006AA2E8 /* SuffixStorageService.swift */; };
+		496B212728AC644D006AA2E8 /* SuffixStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B212528AC5F76006AA2E8 /* SuffixStorageService.swift */; };
+		496B212C28ACFB23006AA2E8 /* SuffixWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B212A28ACFB13006AA2E8 /* SuffixWidgetEntryView.swift */; };
+		496D29FB28A576B20090D629 /* ResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D29FA28A576B20090D629 /* ResultScreen.swift */; };
+		496D29FD28A578000090D629 /* InputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D29FC28A578000090D629 /* InputScreen.swift */; };
+		496D29FF28A578F60090D629 /* SuffixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D29FE28A578F60090D629 /* SuffixViewModel.swift */; };
+		49FF6F9828AD328700ACA6FA /* TabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF6F9728AD328700ACA6FA /* TabScreen.swift */; };
+		49FF6F9928AD328700ACA6FA /* TabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF6F9728AD328700ACA6FA /* TabScreen.swift */; };
+		49FF6F9B28AD3AEA00ACA6FA /* SuffixWidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF6F9A28AD3AEA00ACA6FA /* SuffixWidgetTimelineProvider.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		496B211F28AC3D6D006AA2E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 490C679A289EE3520068D1CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 496B211528AC3D6B006AA2E8;
+			remoteInfo = SuffixWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		496B20FB28AAE8E0006AA2E8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				496B212128AC3D6D006AA2E8 /* SuffixWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		490C67A2289EE3520068D1CE /* SuffixSequence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuffixSequence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		490C67A5289EE3520068D1CE /* SuffixSequenceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixSequenceApp.swift; sourceTree = "<group>"; };
-		490C67A7289EE3520068D1CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		490C67A7289EE3520068D1CE /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		490C67A9289EE3590068D1CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		490C67AC289EE3590068D1CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		49748A8D28A4ED5500482DFC /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
+		496415BB28AD712D0033F320 /* TabRouterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRouterViewModel.swift; sourceTree = "<group>"; };
+		496415BE28AD95E60033F320 /* SuffixOccurrence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixOccurrence.swift; sourceTree = "<group>"; };
+		496415C528AD96800033F320 /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
+		496415C828AD98170033F320 /* SuffixSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixSequence.swift; sourceTree = "<group>"; };
+		496B20E828AAE8DE006AA2E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		496B20EA28AAE8DE006AA2E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		496B211628AC3D6B006AA2E8 /* SuffixWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SuffixWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		496B211A28AC3D6B006AA2E8 /* SuffixWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixWidget.swift; sourceTree = "<group>"; };
+		496B211C28AC3D6D006AA2E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		496B211E28AC3D6D006AA2E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		496B212528AC5F76006AA2E8 /* SuffixStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixStorageService.swift; sourceTree = "<group>"; };
+		496B212828AC6767006AA2E8 /* SuffixWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuffixWidgetExtension.entitlements; sourceTree = "<group>"; };
+		496B212928AC6777006AA2E8 /* SuffixSequence.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuffixSequence.entitlements; sourceTree = "<group>"; };
+		496B212A28ACFB13006AA2E8 /* SuffixWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixWidgetEntryView.swift; sourceTree = "<group>"; };
+		496D29FA28A576B20090D629 /* ResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreen.swift; sourceTree = "<group>"; };
+		496D29FC28A578000090D629 /* InputScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputScreen.swift; sourceTree = "<group>"; };
+		496D29FE28A578F60090D629 /* SuffixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixViewModel.swift; sourceTree = "<group>"; };
+		49FF6F9728AD328700ACA6FA /* TabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScreen.swift; sourceTree = "<group>"; };
+		49FF6F9A28AD3AEA00ACA6FA /* SuffixWidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixWidgetTimelineProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,13 +92,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		496B211328AC3D6B006AA2E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496B211828AC3D6B006AA2E8 /* SwiftUI.framework in Frameworks */,
+				496B211728AC3D6B006AA2E8 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		490C6799289EE3520068D1CE = {
 			isa = PBXGroup;
 			children = (
+				496B212828AC6767006AA2E8 /* SuffixWidgetExtension.entitlements */,
 				490C67A4289EE3520068D1CE /* SuffixSequence */,
+				496B211928AC3D6B006AA2E8 /* SuffixWidget */,
+				496B20E728AAE8DE006AA2E8 /* Frameworks */,
 				490C67A3289EE3520068D1CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				490C67A2289EE3520068D1CE /* SuffixSequence.app */,
+				496B211628AC3D6B006AA2E8 /* SuffixWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,11 +127,17 @@
 		490C67A4289EE3520068D1CE /* SuffixSequence */ = {
 			isa = PBXGroup;
 			children = (
-				490C67A5289EE3520068D1CE /* SuffixSequenceApp.swift */,
-				490C67A7289EE3520068D1CE /* ContentView.swift */,
-				490C67A9289EE3590068D1CE /* Assets.xcassets */,
+				496415C328AD96150033F320 /* Views */,
+				49DB4B4228AD4652001817B2 /* Screens */,
+				496415BD28AD95CD0033F320 /* Models */,
+				49DB4B4128AD4649001817B2 /* ViewModels */,
+				49DB4B4028AD4641001817B2 /* Services */,
+				496415C228AD960D0033F320 /* App */,
+				496415C428AD96200033F320 /* Resources */,
 				490C67AB289EE3590068D1CE /* Preview Content */,
-				49748A8D28A4ED5500482DFC /* TextScreen.swift */,
+				496B212928AC6777006AA2E8 /* SuffixSequence.entitlements */,
+				49FF6F9728AD328700ACA6FA /* TabScreen.swift */,
+				496415C528AD96800033F320 /* Sort.swift */,
 			);
 			path = SuffixSequence;
 			sourceTree = "<group>";
@@ -70,6 +150,86 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		496415BD28AD95CD0033F320 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				496415BE28AD95E60033F320 /* SuffixOccurrence.swift */,
+				496415C828AD98170033F320 /* SuffixSequence.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		496415C228AD960D0033F320 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				490C67A5289EE3520068D1CE /* SuffixSequenceApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		496415C328AD96150033F320 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				490C67A7289EE3520068D1CE /* RootView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		496415C428AD96200033F320 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				490C67A9289EE3590068D1CE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		496B20E728AAE8DE006AA2E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				496B20E828AAE8DE006AA2E8 /* WidgetKit.framework */,
+				496B20EA28AAE8DE006AA2E8 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		496B211928AC3D6B006AA2E8 /* SuffixWidget */ = {
+			isa = PBXGroup;
+			children = (
+				496B211A28AC3D6B006AA2E8 /* SuffixWidget.swift */,
+				496B211C28AC3D6D006AA2E8 /* Assets.xcassets */,
+				496B211E28AC3D6D006AA2E8 /* Info.plist */,
+				496B212A28ACFB13006AA2E8 /* SuffixWidgetEntryView.swift */,
+				49FF6F9A28AD3AEA00ACA6FA /* SuffixWidgetTimelineProvider.swift */,
+			);
+			path = SuffixWidget;
+			sourceTree = "<group>";
+		};
+		49DB4B4028AD4641001817B2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				496B212528AC5F76006AA2E8 /* SuffixStorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		49DB4B4128AD4649001817B2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				496D29FE28A578F60090D629 /* SuffixViewModel.swift */,
+				496415BB28AD712D0033F320 /* TabRouterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		49DB4B4228AD4652001817B2 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				496D29FC28A578000090D629 /* InputScreen.swift */,
+				496D29FA28A576B20090D629 /* ResultScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,15 +240,34 @@
 				490C679E289EE3520068D1CE /* Sources */,
 				490C679F289EE3520068D1CE /* Frameworks */,
 				490C67A0289EE3520068D1CE /* Resources */,
+				496B20FB28AAE8E0006AA2E8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				496B212028AC3D6D006AA2E8 /* PBXTargetDependency */,
 			);
 			name = SuffixSequence;
 			productName = SuffixSequence;
 			productReference = 490C67A2289EE3520068D1CE /* SuffixSequence.app */;
 			productType = "com.apple.product-type.application";
+		};
+		496B211528AC3D6B006AA2E8 /* SuffixWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 496B212228AC3D6D006AA2E8 /* Build configuration list for PBXNativeTarget "SuffixWidgetExtension" */;
+			buildPhases = (
+				496B211228AC3D6B006AA2E8 /* Sources */,
+				496B211328AC3D6B006AA2E8 /* Frameworks */,
+				496B211428AC3D6B006AA2E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuffixWidgetExtension;
+			productName = SuffixWidgetExtension;
+			productReference = 496B211628AC3D6B006AA2E8 /* SuffixWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -102,6 +281,9 @@
 				TargetAttributes = {
 					490C67A1289EE3520068D1CE = {
 						CreatedOnToolsVersion = 13.4;
+					};
+					496B211528AC3D6B006AA2E8 = {
+						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
@@ -119,6 +301,7 @@
 			projectRoot = "";
 			targets = (
 				490C67A1289EE3520068D1CE /* SuffixSequence */,
+				496B211528AC3D6B006AA2E8 /* SuffixWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +316,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		496B211428AC3D6B006AA2E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496B211D28AC3D6D006AA2E8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,13 +331,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490C67A8289EE3520068D1CE /* ContentView.swift in Sources */,
-				49748A8E28A4ED5500482DFC /* TextScreen.swift in Sources */,
+				496D29FD28A578000090D629 /* InputScreen.swift in Sources */,
+				496D29FB28A576B20090D629 /* ResultScreen.swift in Sources */,
+				496415BC28AD712D0033F320 /* TabRouterViewModel.swift in Sources */,
+				496415C628AD96800033F320 /* Sort.swift in Sources */,
+				496415C928AD98170033F320 /* SuffixSequence.swift in Sources */,
+				49FF6F9828AD328700ACA6FA /* TabScreen.swift in Sources */,
+				496415BF28AD95E60033F320 /* SuffixOccurrence.swift in Sources */,
+				490C67A8289EE3520068D1CE /* RootView.swift in Sources */,
 				490C67A6289EE3520068D1CE /* SuffixSequenceApp.swift in Sources */,
+				496B212628AC5F76006AA2E8 /* SuffixStorageService.swift in Sources */,
+				496D29FF28A578F60090D629 /* SuffixViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496B211228AC3D6B006AA2E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496B212728AC644D006AA2E8 /* SuffixStorageService.swift in Sources */,
+				496415C028AD95E60033F320 /* SuffixOccurrence.swift in Sources */,
+				49FF6F9B28AD3AEA00ACA6FA /* SuffixWidgetTimelineProvider.swift in Sources */,
+				49FF6F9928AD328700ACA6FA /* TabScreen.swift in Sources */,
+				496415C728AD96800033F320 /* Sort.swift in Sources */,
+				496B212C28ACFB23006AA2E8 /* SuffixWidgetEntryView.swift in Sources */,
+				496B211B28AC3D6B006AA2E8 /* SuffixWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		496B212028AC3D6D006AA2E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 496B211528AC3D6B006AA2E8 /* SuffixWidgetExtension */;
+			targetProxy = 496B211F28AC3D6D006AA2E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		490C67AE289EE3590068D1CE /* Debug */ = {
@@ -266,11 +487,14 @@
 		490C67B1289EE3590068D1CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SuffixSequence/SuffixSequence.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SuffixSequence/Preview Content\"";
+				DEVELOPMENT_TEAM = HPQTL9HB22;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -294,11 +518,14 @@
 		490C67B2289EE3590068D1CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SuffixSequence/SuffixSequence.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SuffixSequence/Preview Content\"";
+				DEVELOPMENT_TEAM = HPQTL9HB22;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -313,6 +540,62 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.aparc.SuffixSequence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		496B212328AC3D6D006AA2E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SuffixWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HPQTL9HB22;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SuffixWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SuffixWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.aparc.SuffixSequence.SuffixWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		496B212428AC3D6D006AA2E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SuffixWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HPQTL9HB22;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SuffixWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SuffixWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.aparc.SuffixSequence.SuffixWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -336,6 +619,15 @@
 			buildConfigurations = (
 				490C67B1289EE3590068D1CE /* Debug */,
 				490C67B2289EE3590068D1CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		496B212228AC3D6D006AA2E8 /* Build configuration list for PBXNativeTarget "SuffixWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496B212328AC3D6D006AA2E8 /* Debug */,
+				496B212428AC3D6D006AA2E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

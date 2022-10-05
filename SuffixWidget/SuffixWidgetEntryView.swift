@@ -37,7 +37,7 @@ struct SuffixWidgetEntryView : View {
     private var actions: some View {
         VStack(spacing: 20) {
             Group {
-                ForEach(TabScreen.allCases) { link in
+                ForEach([TabScreen.enterText, TabScreen.results]) { link in
                     if let url = URL(string: link.rawValue) {
                         Link(destination: url) {
                             Circle()

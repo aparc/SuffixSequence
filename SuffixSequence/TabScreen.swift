@@ -9,6 +9,7 @@ enum TabScreen: String, CaseIterable, Identifiable {
     
     case enterText
     case results
+    case timeMeasurement
     
     var id: Self { self }
     

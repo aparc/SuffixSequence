@@ -19,25 +19,29 @@ final class SuffixViewModel: ObservableObject {
         $text
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
-            .map { t -> [SuffixSequence] in
-                t
-                    .split(separator: " ")
-                    .map { SuffixSequence(word: String($0)) }
+            .map { text -> SuffixSequence in
+                SuffixSequence(word: text)
             }
-            .sink { [unowned self] suffixSequences in
-                let t = suffixSequences
-                    .flatMap { $0 }
-                    .filter{ $0.count > 2 }
-                    .reduce(into: [:]) { counts, suffix in
-                        counts[suffix, default: 0] += 1
-                    }.map {
-                        SuffixOccurrence(suffix: $0.key, occurrenceCount: $0.value)
+            .sink { [unowned self] suffixSequence in
+                let suffixArray = suffixSequence.suffixArray()
+                
+                let threeMoreLengthSuffixes = text
+                    .split { !$0.isLetter }
+                    .map { String($0) }
+                    .filter { $0.count > 2 }
+                
+                let uniqueSuffixes = Set(threeMoreLengthSuffixes)
+                
+                let jobs = uniqueSuffixes.map { suffix in
+                    Job(text: text, suffixArray: suffixArray, substring: suffix)
+                }
+                
+                JobScheduler.shared.execute(jobs) {
+                    suffixes = $0
+                    if !self.suffixes.isEmpty {
+                        SuffixStorageService.shared.save(data: suffixes)
+                        WidgetCenter.shared.reloadTimelines(ofKind: "SuffixWidget")
                     }
-                    
-                self.suffixes = t
-                if !self.suffixes.isEmpty {
-                    SuffixStorageService.shared.save(data: suffixes)
-                    WidgetCenter.shared.reloadTimelines(ofKind: "SuffixWidget")
                 }
             }
             .store(in: &subscriptions)

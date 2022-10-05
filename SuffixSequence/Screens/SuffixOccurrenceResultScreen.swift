@@ -13,48 +13,36 @@ enum SuffixResultsSegment: String {
     case top10 = "Top 10"
 }
 
-struct ResultScreen: View {
+struct SuffixOccurrenceResultScreen: View {
     
-    @ObservedObject var viewModel: SuffixViewModel
+    @EnvironmentObject var viewModel: SuffixViewModel
     
     @State private var selection: SuffixResultsSegment = .all
     @State private var sortDirection: Sort = .asc
     
     var body: some View {
-        VStack(alignment: .leading) {
-            header
-            suffixList
-        }
-    }
-    
-    private var header: some View {
-        VStack {
-            bar
-            picker
-        }
-        .padding()
-    }
-    
-    
-    private var bar: some View {
-        HStack {
-            Text("Last Results")
-                .font(.largeTitle)
-                .bold()
-            Spacer()
-            Button(action: changeSortDirection) {
-                Image(systemName: "arrow.up.arrow.down.circle")
+        NavigationView {
+            VStack(alignment: .leading) {
+                picker
+                suffixList
             }
-            .animation(.default, value: selection)
+            .navigationTitle("Last Results")
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button(action: changeSortDirection) {
+                        Image(systemName: "arrow.up.arrow.down.circle")
+                    }
+                }
+            }
         }
-    }
-    
+    } // body
     
     private var picker: some View {
         Picker("Results", selection: $selection) {
             Text(SuffixResultsSegment.all.rawValue).tag(SuffixResultsSegment.all)
             Text(SuffixResultsSegment.top10.rawValue).tag(SuffixResultsSegment.top10)
         }
+        .padding()
         .pickerStyle(.segmented)
         .onChange(of: selection) { newValue in
             sortDirection = newValue == .all ? .asc : .desc
@@ -62,18 +50,13 @@ struct ResultScreen: View {
     }
     
     private var suffixList: some View {
-        List {
-            ForEach(
-                getSuffixes(),
-                id: \.suffix
-            ) { suffix in
-                HStack {
-                    Text(suffix.suffix)
-                    Spacer()
-                    Text("\(suffix.occurrenceCount)")
-                        .bold()
-                        .opacity(suffix.occurrenceCount > 1 ? 1 : 0)
-                }
+        List(getSuffixes()) { suffix in
+            HStack {
+                Text(suffix.suffix)
+                Spacer()
+                Text("\(suffix.occurrenceCount)")
+                    .bold()
+                    .opacity(suffix.occurrenceCount > 1 ? 1 : 0)
             }
         }
         .listStyle(.plain)

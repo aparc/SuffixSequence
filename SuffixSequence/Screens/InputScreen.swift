@@ -9,29 +9,26 @@ import SwiftUI
 
 struct InputScreen: View {
     
-    @ObservedObject var viewModel: SuffixViewModel
+    @EnvironmentObject var viewModel: SuffixViewModel
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Enter text")
-                    .bold()
-                    .font(.largeTitle)
-                Spacer()
+        NavigationView {
+            ScrollView {
+                VStack {
+                    TextEditor(text: $viewModel.text)
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke())
+                        .frame(height: 500)
+                    .navigationTitle("Enter text")
+                    Spacer()
+                }
+                .padding()
             }
-            
-            TextEditor(text: $viewModel.text)
-                .overlay(RoundedRectangle(cornerRadius: 10).stroke())
-                .frame(height: 500)
-            
-            Spacer()
         }
-        .padding()
-    }
+    } // body
 }
 
 struct InputScreen_Previews: PreviewProvider {
     static var previews: some View {
-        InputScreen(viewModel: .init())
+        InputScreen()
     }
 }

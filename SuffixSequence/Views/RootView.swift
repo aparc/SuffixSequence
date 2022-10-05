@@ -16,18 +16,24 @@ struct RootView: View {
     
     var body: some View {
         TabView(selection: $tabRouter.tabSelection) {
-            InputScreen(viewModel: viewModel)
+            InputScreen()
                 .tag(TabScreen.enterText)
                 .tabItem {
                     Label("Input", systemImage: "square.and.pencil")
                 }
             
-            ResultScreen(viewModel: viewModel)
+            SuffixOccurrenceResultScreen()
                 .tag(TabScreen.results)
                 .tabItem {
                     Label("Resuts", systemImage: "list.dash")
                 }
+            ExecutionTimeResultScreen()
+                .tag(TabScreen.timeMeasurement)
+                .tabItem {
+                    Label("Times", systemImage: "clock.fill")
+                }
         }
+        .environmentObject(viewModel)
     }
 }
 
